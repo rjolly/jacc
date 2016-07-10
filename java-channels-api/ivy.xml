@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+    <info module="java-channels-api" organisation="com.github.rjolly" revision="0.2">
+        <description homepage="http://github.com/gvsumasl/jacc"/>
+    </info>
+    <configurations>
+        <conf name="default" extends="runtime,master"/>
+        <conf name="master"/>
+        <conf name="compile"/>
+        <conf name="runtime"/>
+        <conf name="compile-test"/>
+        <conf name="runtime-test"/>
+        <conf name="sources"/>
+        <conf name="javadoc"/>
+        <conf name="pom"/>
+    </configurations>
+    <publications>
+        <artifact name="java-channels-api" type="jar" ext="jar" conf="master"/>
+        <artifact name="java-channels-api" type="source" ext="jar" conf="sources" e:classifier="sources"/>
+        <artifact name="java-channels-api" type="javadoc" ext="jar" conf="javadoc" e:classifier="javadoc"/>
+        <artifact name="java-channels-api" type="pom" ext="pom" conf="pom"/>
+    </publications>
+    <dependencies>
+        <dependency org="commons-io" name="commons-io" rev="2.4" conf="compile->master;runtime->default"/>
+        <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.3.2" conf="compile->master;runtime->default"/>
+        <dependency org="commons-lang" name="commons-lang" rev="2.6" conf="compile->master;runtime->default"/>
+        <dependency org="org.json" name="json" rev="20090211" conf="compile->master;runtime->default"/>
+    </dependencies>
+</ivy-module>
